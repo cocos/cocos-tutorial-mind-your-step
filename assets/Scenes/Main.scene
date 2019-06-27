@@ -88,10 +88,10 @@
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
+      "x": -0.08619841216052426,
+      "y": 0.14724695169538116,
+      "z": 0.012882439012095185,
+      "w": 0.9852523594097718
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -102,15 +102,15 @@
     "_layer": 1,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": -10,
+      "y": 17,
       "z": 0
     },
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
     "__type__": "cc.DirectionalLightComponent",
-    "_name": "",
+    "_name": "Main Light<DirectionalLightComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 2
@@ -239,10 +239,11 @@
         "__uuid__": "d3c7820c-2a98-4429-8bc7-b8453bc9ac41"
       }
     ],
+    "_viewID": 0,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@capsule.mesh"
     },
-    "_shadowCastingMode": 0,
+    "_shadowCastingMode": 1,
     "_receiveShadows": false,
     "_id": "0e4WOUIQZE3qmlGfElRHOM"
   },
@@ -343,6 +344,7 @@
     },
     "_screenScale": 1,
     "_targetDisplay": 0,
+    "_visibility": 0,
     "_id": "7dWQTpwS5LrIHnc1zAPUtf"
   },
   {
@@ -513,7 +515,7 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 480,
+      "x": 540,
       "y": 320,
       "z": 1
     },
@@ -653,7 +655,7 @@
     "_enabled": true,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 960,
+      "width": 1080,
       "height": 640
     },
     "_anchorPoint": {
@@ -1403,7 +1405,7 @@
     "skybox": {
       "__id__": 43
     },
-    "planarShadow": {
+    "planarShadows": {
       "__id__": 44
     }
   },
@@ -1427,26 +1429,27 @@
   },
   {
     "__type__": "cc.SkyboxInfo",
-    "_cubemap": null,
+    "_envmap": null,
     "_isRGBE": false,
-    "_enabled": false
+    "_enabled": false,
+    "_useIBL": false
   },
   {
     "__type__": "cc.PlanarShadowInfo",
-    "_enabled": false,
+    "_enabled": true,
     "_normal": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 1,
-      "z": 0
+      "y": 0,
+      "z": 1
     },
-    "_distance": 0,
+    "_distance": -1,
     "_shadowColor": {
       "__type__": "cc.Color",
-      "r": 76,
-      "g": 76,
-      "b": 76,
-      "a": 255
+      "r": 26,
+      "g": 27,
+      "b": 26,
+      "a": 188
     }
   }
 ]
