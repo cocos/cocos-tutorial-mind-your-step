@@ -1,0 +1,41 @@
+{
+  "buildTask": {
+    "web-desktop": {
+      "options": {
+        "buildPath": "./build",
+        "debug": false,
+        "embedWebDebugger": false,
+        "excludedModules": [],
+        "force_combile_engin": false,
+        "md5Cache": false,
+        "name": "MindYourStep_Tutorial",
+        "physics": "cannon",
+        "platform": "web-desktop",
+        "preview_url": "http://192.168.52.96:7456/build",
+        "resolution": {
+          "height": 640,
+          "width": 960
+        },
+        "scenes": [
+          {
+            "url": "db://assets/Scenes/Main.scene",
+            "uuid": "6962d389-b02c-41bc-937c-43c2f47d6fbc"
+          }
+        ],
+        "sourceMaps": false,
+        "start_scene": "6962d389-b02c-41bc-937c-43c2f47d6fbc",
+        "taskName": "web-desktop"
+      },
+      "rate": 100,
+      "state": "success",
+      "subTask": {
+        "engine": "success",
+        "settings": "success",
+        "template": "success"
+      }
+    }
+  },
+  "platformQueue": {
+    "web-desktop": []
+  }
+}
