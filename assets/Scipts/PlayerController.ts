@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, vmath, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "Cocos3D";
+import { _decorator, Component, Vec3, vmath, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")

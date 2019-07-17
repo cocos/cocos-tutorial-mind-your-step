@@ -1,4 +1,4 @@
-import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger} from "Cocos3D";
+import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger} from "cc";
 import { PlayerController } from "./PlayerController";
 const { ccclass, property } = _decorator;
 

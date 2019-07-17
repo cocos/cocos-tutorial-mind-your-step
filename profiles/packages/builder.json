@@ -5,13 +5,10 @@
         "buildPath": "./build",
         "debug": false,
         "embedWebDebugger": false,
-        "excludedModules": [],
-        "force_combile_engin": false,
+        "forceCombileEngine": true,
         "md5Cache": false,
-        "name": "MindYourStep_Tutorial",
-        "physics": "cannon",
+        "name": "tutorial-mind-your-step-3d",
         "platform": "web-desktop",
-        "preview_url": "http://192.168.52.96:7456/build",
         "resolution": {
           "height": 640,
           "width": 960
@@ -23,7 +20,7 @@
           }
         ],
         "sourceMaps": false,
-        "start_scene": "6962d389-b02c-41bc-937c-43c2f47d6fbc",
+        "startScene": "6962d389-b02c-41bc-937c-43c2f47d6fbc",
         "taskName": "web-desktop"
       },
       "rate": 100,
@@ -36,6 +33,7 @@
     }
   },
   "platformQueue": {
-    "web-desktop": []
+    "web-desktop": [],
+    "web-mobile": []
   }
 }
