@@ -17,7 +17,6 @@
     "_parent": null,
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 2
@@ -52,7 +51,7 @@
       "y": 0,
       "z": 0
     },
-    "_id": ""
+    "_id": "8aSaYDbORPsKJxIFcLARvY"
   },
   {
     "__type__": "cc.ModelComponent",
@@ -67,12 +66,13 @@
         "__uuid__": "d3c7820c-2a98-4429-8bc7-b8453bc9ac41"
       }
     ],
+    "_viewID": 0,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@box.mesh"
     },
     "_shadowCastingMode": 0,
     "_receiveShadows": false,
-    "_id": ""
+    "_id": "92Dn0FhjZNFZd0+3oJt+IH"
   },
   {
     "__type__": "cc.PrefabInfo",

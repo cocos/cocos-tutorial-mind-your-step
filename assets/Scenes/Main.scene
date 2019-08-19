@@ -29,7 +29,6 @@
       }
     ],
     "_active": true,
-    "_level": 0,
     "_components": [],
     "_prefab": null,
     "_lpos": {
@@ -73,7 +72,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 3
@@ -144,7 +142,6 @@
       }
     ],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 10
@@ -188,7 +185,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 2,
     "_components": [
       {
         "__id__": 6
@@ -276,7 +272,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 2,
     "_components": [
       {
         "__id__": 9
@@ -343,8 +338,8 @@
       "height": 1
     },
     "_screenScale": 1,
-    "_targetDisplay": 0,
     "_visibility": 0,
+    "_targetTexture": null,
     "_id": "7dWQTpwS5LrIHnc1zAPUtf"
   },
   {
@@ -369,7 +364,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 12
@@ -452,7 +446,6 @@
       }
     ],
     "_active": true,
-    "_level": 2,
     "_components": [
       {
         "__id__": 40
@@ -503,7 +496,6 @@
       }
     ],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 18
@@ -550,7 +542,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 2,
     "_components": [
       {
         "__id__": 16
@@ -674,6 +665,7 @@
     },
     "_enabled": true,
     "_priority": 0,
+    "_targetTexture": null,
     "_id": "9fJ0N9dyhP356kwbyhOLtJ"
   },
   {
@@ -685,7 +677,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 3,
     "_components": [
       {
         "__id__": 21
@@ -792,7 +783,6 @@
       }
     ],
     "_active": true,
-    "_level": 3,
     "_components": [
       {
         "__id__": 27
@@ -842,7 +832,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 3,
     "_components": [
       {
         "__id__": 25
@@ -1074,7 +1063,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 3,
     "_components": [
       {
         "__id__": 32
@@ -1178,7 +1166,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 3,
     "_components": [
       {
         "__id__": 35
@@ -1282,7 +1269,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 3,
     "_components": [
       {
         "__id__": 38

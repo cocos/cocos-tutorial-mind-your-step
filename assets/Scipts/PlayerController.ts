@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, vmath, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "cc";
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
@@ -52,7 +52,7 @@ export class PlayerController extends Component {
         this._curJumpTime = 0;
         this._curJumpSpeed = this._jumpStep / this._jumpTime;
         this.node.getPosition(this._curPos);
-        vmath.vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
+        Vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
 
         this._isMoving = true;
 
@@ -82,7 +82,7 @@ export class PlayerController extends Component {
                 // tween
                 this.node.getPosition(this._curPos);
                 this._deltaPos.x = this._curJumpSpeed * deltaTime;
-                vmath.vec3.add(this._curPos, this._curPos, this._deltaPos);
+                Vec3.add(this._curPos, this._curPos, this._deltaPos);
                 this.node.setPosition(this._curPos);
             }
         }
