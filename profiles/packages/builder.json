@@ -35,5 +35,67 @@
   "platformQueue": {
     "web-desktop": [],
     "web-mobile": []
+  },
+  "BuildTaskManager": {
+    "queue": [
+      {
+        "id": "web-desktop_001",
+        "state": "success",
+        "progress": 1,
+        "options": {
+          "buildPath": "./build",
+          "compressTexture": true,
+          "debug": false,
+          "designHeight": 960,
+          "designResolution": {
+            "width": "1080",
+            "height": 640,
+            "fitWidth": true,
+            "fitHeight": false
+          },
+          "designWidth": 1280,
+          "forceCombileEngine": true,
+          "includeModules": [
+            "base",
+            "gfx-webgl",
+            "gfx-webgl2",
+            "ui",
+            "particle",
+            "physics-cannon",
+            "physics-framework",
+            "audio",
+            "tween",
+            "terrain"
+          ],
+          "inlineSpriteFrames": false,
+          "md5Cache": false,
+          "mergeStartScene": false,
+          "name": "tutorial-mind-your-step",
+          "packAutoAtlas": true,
+          "platform": "web-desktop",
+          "resolution": {
+            "height": 640,
+            "width": 960
+          },
+          "scenes": [
+            {
+              "url": "db://assets/Scenes/Main.scene",
+              "uuid": "6962d389-b02c-41bc-937c-43c2f47d6fbc"
+            }
+          ],
+          "sourceMaps": false,
+          "startScene": "6962d389-b02c-41bc-937c-43c2f47d6fbc",
+          "taskName": "web-desktop_001"
+        },
+        "message": "build sucess in 54101 ms!"
+      }
+    ]
+  },
+  "common": {
+    "name": "tutorial-mind-your-step",
+    "designWidth": 1280
+  },
+  "web-desktop": {
+    "designWidth": 1280
   }
 }

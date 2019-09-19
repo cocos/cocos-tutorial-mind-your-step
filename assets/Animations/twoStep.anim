@@ -1,15 +1,21 @@
-{
-  "__type__": "cc.AnimationClip",
-  "_name": "twoStep",
-  "_objFlags": 0,
-  "_native": "",
-  "sample": 60,
-  "speed": 1,
-  "wrapMode": 1,
-  "curveDatas": {
-    "/": {
-      "props": {
-        "position": {
+[
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "twoStep",
+    "_objFlags": 0,
+    "_native": "",
+    "sample": 30,
+    "speed": 1,
+    "wrapMode": 1,
+    "_curves": [
+      {
+        "modifiers": [
+          {
+            "__id__": 1
+          },
+          "position"
+        ],
+        "data": {
           "keys": 0,
           "values": [
             {
@@ -38,16 +44,20 @@
           ]
         }
       }
-    }
+    ],
+    "events": [],
+    "_duration": 0.3,
+    "_keys": [
+      [
+        0,
+        0.16666666666666666,
+        0.3
+      ]
+    ],
+    "_stepness": 0
   },
-  "events": [],
-  "_duration": 0.1,
-  "_keys": [
-    [
-      0,
-      0.05,
-      0.1
-    ]
-  ],
-  "_stepness": 0
-}
+  {
+    "__type__": "cc.HierachyModifier",
+    "path": "/"
+  }
+]

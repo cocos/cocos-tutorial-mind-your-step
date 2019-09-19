@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "cc";
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, SkeletalAnimationComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
@@ -6,12 +6,14 @@ export class PlayerController extends Component {
 
     @property({type: AnimationComponent})
     public BodyAnim: AnimationComponent = null;
+    @property({type: SkeletalAnimationComponent})
+    public CocosAnim: SkeletalAnimationComponent = null;
 
     // for fake tween
     private _startJump: boolean = false;
     private _jumpStep: number = 0;
     private _curJumpTime: number = 0;
-    private _jumpTime: number = 0.1;
+    private _jumpTime: number = 0.3;
     private _curJumpSpeed: number = 0;
     private _curPos: Vec3 = cc.v3();
     private _deltaPos: Vec3 = cc.v3(0, 0, 0);
@@ -56,8 +58,10 @@ export class PlayerController extends Component {
 
         this._isMoving = true;
 
+        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5; //跳跃动画时间比较长，这里加速播放
+        this.CocosAnim.play('cocos_anim_jump'); //播放跳跃动画
         if (step === 1) {
-            this.BodyAnim.play('oneStep');
+            //this.BodyAnim.play('oneStep');
         } else if (step === 2) {
             this.BodyAnim.play('twoStep');
         }
@@ -67,6 +71,7 @@ export class PlayerController extends Component {
 
     onOnceJumpEnd() {
         this._isMoving = false;
+        this.CocosAnim.play('cocos_anim_idle');
         this.node.emit('JumpEnd', this._curMoveIndex);
     }
 
