@@ -46,14 +46,14 @@
           "buildPath": "./build",
           "compressTexture": true,
           "debug": false,
-          "designHeight": 960,
+          "designHeight": 640,
           "designResolution": {
             "width": "1080",
             "height": 640,
             "fitWidth": true,
             "fitHeight": false
           },
-          "designWidth": 1280,
+          "designWidth": 1080,
           "forceCombileEngine": true,
           "includeModules": [
             "base",
@@ -87,15 +87,17 @@
           "startScene": "6962d389-b02c-41bc-937c-43c2f47d6fbc",
           "taskName": "web-desktop_001"
         },
-        "message": "build sucess in 54101 ms!"
+        "message": "build sucess in 60542 ms!"
       }
     ]
   },
   "common": {
     "name": "tutorial-mind-your-step",
-    "designWidth": 1280
+    "designWidth": 1080,
+    "designHeight": 640
   },
   "web-desktop": {
-    "designWidth": 1280
+    "designWidth": 1080,
+    "designHeight": 640
   }
 }
