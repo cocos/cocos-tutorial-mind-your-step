@@ -101,7 +101,7 @@ export class GameManager extends Component {
     }
 
     checkResult(moveIndex: number) {
-        if (moveIndex <= this.roadLength) {
+        if (moveIndex < this.roadLength) {
             if (this._road[moveIndex] == BlockType.BT_NONE) {   //跳到了空方块上
                 this.curState = GameState.GS_INIT;
             }

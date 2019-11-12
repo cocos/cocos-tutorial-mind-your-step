@@ -1,14 +1,9 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "90f86573-5baf-41e2-97db-8604d1f42b65",
-  "name": "",
-  "id": "",
-  "displayName": "",
-  "files": [
-    ".gltf"
-  ],
+  "files": [],
   "subMetas": {
     "a9630": {
       "ver": "1.0.0",
@@ -44,7 +39,6 @@
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -55,7 +49,11 @@
       ],
       "scenes": [
         "90f86573-5baf-41e2-97db-8604d1f42b65@41e97"
-      ]
-    }
+      ],
+      "meshes": [],
+      "textures": [],
+      "materials": []
+    },
+    "imageMetas": []
   }
 }

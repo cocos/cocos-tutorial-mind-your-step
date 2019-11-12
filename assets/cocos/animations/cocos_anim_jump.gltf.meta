@@ -1,17 +1,12 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "501da3c5-f2d8-45f7-bc04-5130d58811ff",
-  "name": "",
-  "id": "",
-  "displayName": "",
-  "files": [
-    ".gltf"
-  ],
+  "files": [],
   "subMetas": {
     "cd579": {
-      "ver": "1.0.10",
+      "ver": "1.0.13",
       "importer": "gltf-animation",
       "name": "cocos_anim_jump.animation",
       "id": "cd579",
@@ -19,13 +14,14 @@
       "uuid": "501da3c5-f2d8-45f7-bc04-5130d58811ff@cd579",
       "imported": true,
       "files": [
+        ".bin",
         ".json"
       ],
       "subMetas": {},
       "userData": {
         "events": [],
         "gltfIndex": 0,
-        "sample": 90,
+        "sample": 30,
         "span": {
           "from": 0,
           "to": 1.6666667461395264
@@ -52,7 +48,6 @@
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -74,7 +69,12 @@
     "assetFinder": {
       "scenes": [
         "501da3c5-f2d8-45f7-bc04-5130d58811ff@645e0"
-      ]
-    }
+      ],
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": []
+    },
+    "imageMetas": []
   }
 }

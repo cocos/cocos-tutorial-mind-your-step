@@ -1,6 +1,9 @@
 {
   "state": {
-    "expand": "[\"db://assets\",\"537d3fb8-d822-4a66-8277-c8634e652b43\",\"fb3c51e5-0f53-479f-9612-638350748401\",\"4467faba-2da9-4cce-88b9-b4680909c97b\",\"6962d389-b02c-41bc-937c-43c2f47d6fbc\",\"db://internal\",\"d8da52c6-0127-41a6-9611-3c7718363db2\",\"0ef0232e-46a2-4e49-aba6-d365c6d6acd2\",\"445d5d9d-c56b-4528-bc90-c847357e5d94\"]",
-    "sort": "name"
+    "expandUuids": [
+      "db://assets",
+      "537d3fb8-d822-4a66-8277-c8634e652b43"
+    ],
+    "sortType": "name"
   }
 }
