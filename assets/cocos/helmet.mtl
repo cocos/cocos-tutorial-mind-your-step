@@ -14,7 +14,8 @@
       "USE_METALLIC_ROUGHNESS_MAP": true,
       "ROUGHNESS_CHANNEL": "g",
       "METALLIC_CHANNEL": "b",
-      "OCCLUSION_CHANNEL": "g"
+      "OCCLUSION_CHANNEL": "g",
+      "USE_SKINNING": true
     }
   ],
   "_states": [
@@ -37,9 +38,6 @@
         "b": 0,
         "a": 0
       },
-      "albedoMap": {
-        "__uuid__": "8949c1f1-9b2b-418c-b150-611a94543416@6c48a"
-      },
       "normalMap": {
         "__uuid__": "19819162-ce3f-4f7c-8889-8b2f35bf274c@6c48a"
       },
@@ -48,6 +46,12 @@
       },
       "metallicRoughnessMap": {
         "__uuid__": "cd618de5-59fc-4899-ba4f-55195f3e24ce@6c48a"
+      },
+      "occlusion": 1,
+      "roughness": 1,
+      "metallic": 1,
+      "mainTexture": {
+        "__uuid__": "8949c1f1-9b2b-418c-b150-611a94543416@6c48a"
       }
     }
   ]
