@@ -1,4 +1,4 @@
-import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger} from "cc";
+import { _decorator, Component, Prefab, instantiate, Node, Label, CCInteger, Vec3 } from "cc";
 import { PlayerController } from "./PlayerController";
 const { ccclass, property } = _decorator;
 
@@ -26,8 +26,8 @@ export class GameManager extends Component {
     @property({type: PlayerController})
     public playerCtrl: PlayerController = null;
     private _curState: GameState = GameState.GS_INIT;
-    @property({type: LabelComponent})
-    public stepsLabel: LabelComponent = null;
+    @property({type: Label})
+    public stepsLabel: Label = null;
 
     start () {
         this.curState = GameState.GS_INIT;
@@ -38,7 +38,7 @@ export class GameManager extends Component {
         this.startMenu.active = true;
         this.generateRoad();
         this.playerCtrl.setInputActive(false);
-        this.playerCtrl.node.setPosition(cc.v3());
+        this.playerCtrl.node.setPosition(Vec3.ZERO);
         this.playerCtrl.reset();
     }
 

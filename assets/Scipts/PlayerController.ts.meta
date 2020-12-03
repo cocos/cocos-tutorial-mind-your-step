@@ -1,15 +1,17 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.9",
   "importer": "typescript",
   "imported": true,
   "uuid": "ddfb1b64-cb1f-4112-ac8c-ef199f1390db",
   "files": [
     ".js",
+    "editor.js",
     ".trans"
   ],
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/Scipts/PlayerController.js"
+    "moduleId": "project:///assets/Scipts/PlayerController.js",
+    "importerSettings": 7
   }
 }

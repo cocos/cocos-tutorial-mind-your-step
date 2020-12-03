@@ -15,9 +15,9 @@ export class PlayerController extends Component {
     private _curJumpTime: number = 0;
     private _jumpTime: number = 0.3;
     private _curJumpSpeed: number = 0;
-    private _curPos: Vec3 = cc.v3();
-    private _deltaPos: Vec3 = cc.v3(0, 0, 0);
-    private _targetPos: Vec3 = cc.v3();
+    private _curPos: Vec3 = new Vec3();
+    private _deltaPos: Vec3 = new Vec3(0, 0, 0);
+    private _targetPos: Vec3 = new Vec3();
     private _isMoving = false;
     private _curMoveIndex = 0;
 
@@ -54,7 +54,7 @@ export class PlayerController extends Component {
         this._curJumpTime = 0;
         this._curJumpSpeed = this._jumpStep / this._jumpTime;
         this.node.getPosition(this._curPos);
-        Vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
+        Vec3.add(this._targetPos, this._curPos, new Vec3(this._jumpStep, 0, 0));
 
         this._isMoving = true;
 

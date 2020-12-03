@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.28",
+  "ver": "1.1.23",
   "importer": "prefab",
   "imported": true,
   "uuid": "eb7138f8-eb1f-433e-ae2c-77ff499c8e14",
@@ -7,5 +7,7 @@
     ".json"
   ],
   "subMetas": {},
-  "userData": {}
+  "userData": {
+    "syncNodeName": "Cube"
+  }
 }
