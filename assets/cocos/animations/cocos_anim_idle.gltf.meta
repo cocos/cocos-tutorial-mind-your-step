@@ -1,5 +1,5 @@
 {
-  "ver": "2.0.2",
+  "ver": "2.0.9",
   "importer": "gltf",
   "imported": true,
   "uuid": "445d5d9d-c56b-4528-bc90-c847357e5d94",
@@ -31,7 +31,7 @@
       }
     },
     "0ea50": {
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "name": "cocos_anim_idle.prefab",
       "id": "0ea50",
