@@ -1,9 +1,13 @@
 {
-  "ver": "4.0.21",
+  "ver": "4.0.9",
   "importer": "typescript",
   "imported": true,
   "uuid": "ddfb1b64-cb1f-4112-ac8c-ef199f1390db",
-  "files": [],
+  "files": [
+    ".js",
+    "editor.js",
+    ".trans"
+  ],
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
