@@ -17,29 +17,35 @@ enum GameState{
 export class GameManager extends Component {
 
     @property({type: Prefab})
-    public cubePrfb: Prefab = null;
+    public cubePrfb: Prefab|null = null;
     @property({type: CCInteger})
     public roadLength: Number = 50;
     private _road: number[] = [];
     @property({type: Node})
-    public startMenu: Node = null;
+    public startMenu: Node|null = null;
     @property({type: PlayerController})
-    public playerCtrl: PlayerController = null;
+    public playerCtrl: PlayerController|null = null;
     private _curState: GameState = GameState.GS_INIT;
     @property({type: Label})
-    public stepsLabel: Label = null;
+    public stepsLabel: Label|null = null;
 
     start () {
         this.curState = GameState.GS_INIT;
-        this.playerCtrl.node.on('JumpEnd', this.onPlayerJumpEnd, this);
+        this.playerCtrl?.node.on('JumpEnd', this.onPlayerJumpEnd, this);
     }
 
     init() {
-        this.startMenu.active = true;
+        if (this.startMenu) {
+            this.startMenu.active = true;
+        }
+
         this.generateRoad();
-        this.playerCtrl.setInputActive(false);
-        this.playerCtrl.node.setPosition(Vec3.ZERO);
-        this.playerCtrl.reset();
+
+        if (this.playerCtrl) {
+            this.playerCtrl.setInputActive(false);
+            this.playerCtrl.node.setPosition(Vec3.ZERO);
+            this.playerCtrl.reset();
+        }
     }
 
     set curState (value: GameState) {
@@ -48,10 +54,18 @@ export class GameManager extends Component {
                 this.init();
                 break;
             case GameState.GS_PLAYING:
-                this.startMenu.active = false;
-                this.stepsLabel.string = '0';   // 将步数重置为0
+                if (this.startMenu) {
+                    this.startMenu.active = false;
+                }
+
+                if (this.stepsLabel) {
+                    this.stepsLabel.string = '0';   // 将步数重置为0
+                }
+                
                 setTimeout(() => {      //直接设置active会直接开始监听鼠标事件，做了一下延迟处理
-                    this.playerCtrl.setInputActive(true);
+                    if (this.playerCtrl) {
+                        this.playerCtrl.setInputActive(true);
+                    }
                 }, 0.1);
                 break;
             case GameState.GS_END:
@@ -77,7 +91,7 @@ export class GameManager extends Component {
         }
 
         for (let j = 0; j < this._road.length; j++) {
-            let block: Node = this.spawnBlockByType(this._road[j]);
+            let block: Node|null = this.spawnBlockByType(this._road[j]);
             if (block) {
                 this.node.addChild(block);
                 block.setPosition(j, -1.5, 0);
@@ -86,7 +100,11 @@ export class GameManager extends Component {
     }
 
     spawnBlockByType(type: BlockType) {
-        let block = null;
+        if (!this.cubePrfb) {
+            return null;
+        }
+
+        let block: Node|null = null;
         switch(type) {
             case BlockType.BT_STONE:
                 block = instantiate(this.cubePrfb);
@@ -111,7 +129,9 @@ export class GameManager extends Component {
     }
 
     onPlayerJumpEnd(moveIndex: number) {
-        this.stepsLabel.string = '' + moveIndex;
+        if (this.stepsLabel) {
+            this.stepsLabel.string = '' + moveIndex;
+        }
         this.checkResult(moveIndex);
     }
 
