@@ -20,12 +20,11 @@ export class GameManager extends Component {
     public cubePrfb: Prefab|null = null;
     @property({type: CCInteger})
     public roadLength: Number = 50;
-    private _road: number[] = [];
+    private _road: BlockType[] = [];
     @property({type: Node})
     public startMenu: Node|null = null;
     @property({type: PlayerController})
     public playerCtrl: PlayerController|null = null;
-    private _curState: GameState = GameState.GS_INIT;
     @property({type: Label})
     public stepsLabel: Label|null = null;
 
@@ -61,7 +60,7 @@ export class GameManager extends Component {
                 if (this.stepsLabel) {
                     this.stepsLabel.string = '0';   // 将步数重置为0
                 }
-                
+
                 setTimeout(() => {      //直接设置active会直接开始监听鼠标事件，做了一下延迟处理
                     if (this.playerCtrl) {
                         this.playerCtrl.setInputActive(true);
@@ -71,7 +70,6 @@ export class GameManager extends Component {
             case GameState.GS_END:
                 break;
         }
-        this._curState = value;
     }
 
     generateRoad() {
