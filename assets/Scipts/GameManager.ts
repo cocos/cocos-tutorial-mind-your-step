@@ -90,12 +90,32 @@ export class GameManager extends Component {
             }
         }
 
+        let linkedBlocks = 0;
         for (let j = 0; j < this._road.length; j++) {
-            let block: Node|null = this.spawnBlockByType(this._road[j]);
-            if (block) {
-                this.node.addChild(block);
-                block.setPosition(j, -1.5, 0);
+            if(this._road[j]) {
+                ++linkedBlocks;
             }
+            if(this._road[j] == 0) {
+                if(linkedBlocks > 0) {
+                    this.spawnBlockByCount(j - 1, linkedBlocks);
+                    linkedBlocks = 0;
+                }
+            }        
+            if(this._road.length == j + 1) {
+                if(linkedBlocks > 0) {
+                    this.spawnBlockByCount(j, linkedBlocks);
+                    linkedBlocks = 0;
+                }
+            }
+        }
+    }
+
+    spawnBlockByCount(lastPos: number, count: number) {
+        let block: Node|null = this.spawnBlockByType(BlockType.BT_STONE);
+        if(block) {
+            this.node.addChild(block);
+            block?.setScale(count, 1, 1);
+            block?.setPosition(lastPos - (count - 1) * 0.5, -1.5, 0);
         }
     }
 
