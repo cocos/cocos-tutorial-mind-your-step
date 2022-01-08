@@ -148,7 +148,7 @@ export class GameManager extends Component {
 
     onPlayerJumpEnd(moveIndex: number) {
         if (this.stepsLabel) {
-            this.stepsLabel.string = '' + moveIndex;
+            this.stepsLabel.string = '' + (moveIndex >= this.roadLength ? this.roadLength : moveIndex);
         }
         this.checkResult(moveIndex);
     }
