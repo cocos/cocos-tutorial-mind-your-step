@@ -1,0 +1,73 @@
+{
+  "__version__": "1.0.0",
+  "current-scene": "6962d389-b02c-41bc-937c-43c2f47d6fbc",
+  "gizmos-infos": {
+    "is2D": false,
+    "is3DIcon": false,
+    "iconSize": 2,
+    "gridVisible": true,
+    "gridColor": [
+      150,
+      150,
+      150,
+      255
+    ],
+    "iconGizmoSize": 2,
+    "isGridVisible": true,
+    "isIconGizmo3D": false
+  },
+  "float-window": {
+    "position": {
+      "cc": {
+        "Camera": {
+          "dock": false,
+          "top": null,
+          "bottom": 10,
+          "left": null,
+          "right": 10
+        }
+      }
+    }
+  },
+  "camera-infos": {
+    "f46876e4-e81b-4931-b493-6d367be385e7": {
+      "position": {
+        "x": 50,
+        "y": 50,
+        "z": 50
+      },
+      "rotation": {
+        "w": 0.8804762392171493,
+        "x": -0.27984814233312133,
+        "y": 0.3647051996310009,
+        "z": 0.11591689595929514
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "6962d389-b02c-41bc-937c-43c2f47d6fbc": {
+      "position": {
+        "x": 13.18923771052619,
+        "y": 5.708607917547088,
+        "z": 5.887664757669085
+      },
+      "rotation": {
+        "x": -0.18095903891980977,
+        "y": 0.5314181198388357,
+        "z": 0.11739060949107594,
+        "w": 0.8191874345615229
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": -1,
+        "z": 0
+      }
+    }
+  },
+  "camera-uuids": [
+    "6962d389-b02c-41bc-937c-43c2f47d6fbc"
+  ]
+}

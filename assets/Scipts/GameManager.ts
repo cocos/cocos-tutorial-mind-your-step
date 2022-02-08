@@ -1,4 +1,4 @@
-import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger} from "cc";
+import { _decorator, Component, Prefab, instantiate, Node, Label, CCInteger, Vec3 } from "cc";
 import { PlayerController } from "./PlayerController";
 const { ccclass, property } = _decorator;
 
@@ -17,29 +17,34 @@ enum GameState{
 export class GameManager extends Component {
 
     @property({type: Prefab})
-    public cubePrfb: Prefab = null;
+    public cubePrfb: Prefab|null = null;
     @property({type: CCInteger})
     public roadLength: Number = 50;
-    private _road: number[] = [];
+    private _road: BlockType[] = [];
     @property({type: Node})
-    public startMenu: Node = null;
+    public startMenu: Node|null = null;
     @property({type: PlayerController})
-    public playerCtrl: PlayerController = null;
-    private _curState: GameState = GameState.GS_INIT;
-    @property({type: LabelComponent})
-    public stepsLabel: LabelComponent = null;
+    public playerCtrl: PlayerController|null = null;
+    @property({type: Label})
+    public stepsLabel: Label|null = null;
 
     start () {
         this.curState = GameState.GS_INIT;
-        this.playerCtrl.node.on('JumpEnd', this.onPlayerJumpEnd, this);
+        this.playerCtrl?.node.on('JumpEnd', this.onPlayerJumpEnd, this);
     }
 
     init() {
-        this.startMenu.active = true;
+        if (this.startMenu) {
+            this.startMenu.active = true;
+        }
+
         this.generateRoad();
-        this.playerCtrl.setInputActive(false);
-        this.playerCtrl.node.setPosition(cc.v3());
-        this.playerCtrl.reset();
+
+        if (this.playerCtrl) {
+            this.playerCtrl.setInputActive(false);
+            this.playerCtrl.node.setPosition(Vec3.ZERO);
+            this.playerCtrl.reset();
+        }
     }
 
     set curState (value: GameState) {
@@ -48,16 +53,23 @@ export class GameManager extends Component {
                 this.init();
                 break;
             case GameState.GS_PLAYING:
-                this.startMenu.active = false;
-                this.stepsLabel.string = '0';   // 将步数重置为0
+                if (this.startMenu) {
+                    this.startMenu.active = false;
+                }
+
+                if (this.stepsLabel) {
+                    this.stepsLabel.string = '0';   // 将步数重置为0
+                }
+
                 setTimeout(() => {      //直接设置active会直接开始监听鼠标事件，做了一下延迟处理
-                    this.playerCtrl.setInputActive(true);
+                    if (this.playerCtrl) {
+                        this.playerCtrl.setInputActive(true);
+                    }
                 }, 0.1);
                 break;
             case GameState.GS_END:
                 break;
         }
-        this._curState = value;
     }
 
     generateRoad() {
@@ -76,17 +88,41 @@ export class GameManager extends Component {
             }
         }
 
+        let linkedBlocks = 0;
         for (let j = 0; j < this._road.length; j++) {
-            let block: Node = this.spawnBlockByType(this._road[j]);
-            if (block) {
-                this.node.addChild(block);
-                block.setPosition(j, -1.5, 0);
+            if(this._road[j]) {
+                ++linkedBlocks;
+            }
+            if(this._road[j] == 0) {
+                if(linkedBlocks > 0) {
+                    this.spawnBlockByCount(j - 1, linkedBlocks);
+                    linkedBlocks = 0;
+                }
+            }        
+            if(this._road.length == j + 1) {
+                if(linkedBlocks > 0) {
+                    this.spawnBlockByCount(j, linkedBlocks);
+                    linkedBlocks = 0;
+                }
             }
         }
     }
 
+    spawnBlockByCount(lastPos: number, count: number) {
+        let block: Node|null = this.spawnBlockByType(BlockType.BT_STONE);
+        if(block) {
+            this.node.addChild(block);
+            block?.setScale(count, 1, 1);
+            block?.setPosition(lastPos - (count - 1) * 0.5, -1.5, 0);
+        }
+    }
+
     spawnBlockByType(type: BlockType) {
-        let block = null;
+        if (!this.cubePrfb) {
+            return null;
+        }
+
+        let block: Node|null = null;
         switch(type) {
             case BlockType.BT_STONE:
                 block = instantiate(this.cubePrfb);
@@ -111,7 +147,9 @@ export class GameManager extends Component {
     }
 
     onPlayerJumpEnd(moveIndex: number) {
-        this.stepsLabel.string = '' + moveIndex;
+        if (this.stepsLabel) {
+            this.stepsLabel.string = '' + (moveIndex >= this.roadLength ? this.roadLength : moveIndex);
+        }
         this.checkResult(moveIndex);
     }
 

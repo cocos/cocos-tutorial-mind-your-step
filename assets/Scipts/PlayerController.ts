@@ -1,13 +1,13 @@
-import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, SkeletalAnimationComponent } from "cc";
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, Animation, SkeletalAnimation } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
 export class PlayerController extends Component {
 
-    @property({type: AnimationComponent})
-    public BodyAnim: AnimationComponent = null;
-    @property({type: SkeletalAnimationComponent})
-    public CocosAnim: SkeletalAnimationComponent = null;
+    // @property({type: Animation})
+    // public BodyAnim: Animation|null = null;
+    @property({type: SkeletalAnimation})
+    public CocosAnim: SkeletalAnimation|null = null;
 
     // for fake tween
     private _startJump: boolean = false;
@@ -15,10 +15,9 @@ export class PlayerController extends Component {
     private _curJumpTime: number = 0;
     private _jumpTime: number = 0.3;
     private _curJumpSpeed: number = 0;
-    private _curPos: Vec3 = cc.v3();
-    private _deltaPos: Vec3 = cc.v3(0, 0, 0);
-    private _targetPos: Vec3 = cc.v3();
-    private _isMoving = false;
+    private _curPos: Vec3 = new Vec3();
+    private _deltaPos: Vec3 = new Vec3(0, 0, 0);
+    private _targetPos: Vec3 = new Vec3();
     private _curMoveIndex = 0;
 
     start () {
@@ -46,7 +45,7 @@ export class PlayerController extends Component {
     }
 
     jumpByStep(step: number) {
-        if (this._isMoving) {
+        if (this._startJump) {
             return;
         }
         this._startJump = true;
@@ -54,24 +53,29 @@ export class PlayerController extends Component {
         this._curJumpTime = 0;
         this._curJumpSpeed = this._jumpStep / this._jumpTime;
         this.node.getPosition(this._curPos);
-        Vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
+        Vec3.add(this._targetPos, this._curPos, new Vec3(this._jumpStep, 0, 0));
 
-        this._isMoving = true;
-
-        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5; //跳跃动画时间比较长，这里加速播放
-        this.CocosAnim.play('cocos_anim_jump'); //播放跳跃动画
-        if (step === 1) {
-            //this.BodyAnim.play('oneStep');
-        } else if (step === 2) {
-            this.BodyAnim.play('twoStep');
+        if (this.CocosAnim) {
+            this.CocosAnim.getState('cocos_anim_jump').speed = 3.5; //跳跃动画时间比较长，这里加速播放
+            this.CocosAnim.play('cocos_anim_jump'); //播放跳跃动画
         }
+
+        // if (this.BodyAnim) {
+        //     if (step === 1) {
+        //         //this.BodyAnim.play('oneStep');
+        //     } else if (step === 2) {
+        //         this.BodyAnim.play('twoStep');
+        //     }
+        // }
 
         this._curMoveIndex += step;
     }
 
     onOnceJumpEnd() {
-        this._isMoving = false;
-        this.CocosAnim.play('cocos_anim_idle');
+        if (this.CocosAnim) {
+            this.CocosAnim.play('cocos_anim_idle');
+        }
+
         this.node.emit('JumpEnd', this._curMoveIndex);
     }
 

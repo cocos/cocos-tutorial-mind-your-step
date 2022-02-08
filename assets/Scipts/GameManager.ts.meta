@@ -1,15 +1,13 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.21",
   "importer": "typescript",
   "imported": true,
   "uuid": "326d60ed-0e36-4fc4-9e12-c13315b9801e",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/Scipts/GameManager.js"
+    "moduleId": "project:///assets/Scipts/GameManager.js",
+    "importerSettings": 7
   }
 }
