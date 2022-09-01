@@ -21,6 +21,7 @@ export class PlayerController extends Component {
     private _curMoveIndex = 0;
 
     start () {
+        systemEvent.on(SystemEvent.EventType.MOUSE_UP, this.onMouseUp, this);
     }
 
     reset() {
