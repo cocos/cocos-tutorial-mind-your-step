@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, Animation, SkeletalAnimation } from "cc";
+import { _decorator, Component, Vec3, input, Input, EventMouse, SkeletalAnimation } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
@@ -29,9 +29,9 @@ export class PlayerController extends Component {
 
     setInputActive(active: boolean) {
         if (active) {
-            systemEvent.on(SystemEvent.EventType.MOUSE_UP, this.onMouseUp, this);
+            input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
         } else {
-            systemEvent.off(SystemEvent.EventType.MOUSE_UP, this.onMouseUp, this);
+            input.off(Input.EventType.MOUSE_UP, this.onMouseUp, this);
         }
     }
 
